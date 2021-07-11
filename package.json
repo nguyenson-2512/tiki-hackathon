@@ -1,0 +1,8 @@
+{
+  "name": "tiki-tech-forum",
+  "version": "0.1.0",
+  "tiki": {
+    "appIdentifier": "app.demo",
+    "buildNumber": 1
+  }
+}
