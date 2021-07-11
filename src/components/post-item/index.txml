@@ -1,0 +1,73 @@
+<view class="flex flex-col pl-small pr-small">
+  <view class="flex flex-row pt-2x-small">
+    <view>
+      <!-- todo: using avatar component -->
+      <image src="../../images/pikachu.png" class="avatar mr-medium" />
+    </view>
+    <view class="flex flex-col">
+      <view class="font-bold ">Michal Nguyen</view>
+      <view class="flex flex-row">
+        <view class="time-value">6 hours ago</view>
+        <!-- todo: find icon tag -->
+        <icon type="arrow_right" color="var(--gray60)" />
+        <text>Phone</text>
+      </view>
+    </view>
+  </view>
+  <view class="flex flex-row items-center">
+    <text number-of-lines="{{3}}">
+      Hien tai e dang phan van khong biet nen mua iphone X hay iphone Xs max,moi nguoi cho e xin it loi khuyen voi
+    </text>
+  </view>
+  <view class="flex flex-col pt-2x-small">
+    <view class="flex flex-row justify-between mb-medium">
+      <view class="flex">
+      <view class="flex flex-row">
+        <image src="../../images/forum.png" class="product-image mr-medium"/>
+      </view>
+      <view class="flex flex-col justify-center">
+        <view class="font-bold text-medium">
+          Iphone X
+        </view>
+        <view class="price-value text-base">
+          2.000.000 đ
+        </view>
+      </view>
+      </view>
+      <view class="flex items-center">
+        <icon type="arrow_right" size="40" color="var(--gray60)" />
+      </view>
+    </view>
+    <!-- todo: map via list -->
+    <view class="flex flex-row justify-between">
+      <view class="flex">
+      <view class="flex flex-row">
+        <image src="../../images/forum.png" class="product-image mr-medium"/>
+      </view>
+      <view class="flex flex-col justify-center">
+        <view class="font-bold text-medium">
+          Iphone X
+        </view>
+        <view class="price-value text-base">
+          2.000.000 đ
+        </view>
+      </view>
+      </view>
+      <view class="flex items-center">
+        <icon type="arrow_right" size="40" color="var(--gray60)" />
+      </view>
+    </view>
+  </view>
+
+  <view class="flex flex-row">
+    <!-- todo: like icon -->
+    <view class="mr-medium flex justify-center items-center">
+      <icon type="plus" size="30" color="var(--gray60)" />
+      <text>10</text>
+    </view>
+    <view class="mr-medium flex justify-center items-center">
+      <icon type="chat" color="var(--gray90)" class="mr-4x-small"/>
+      <text>20</text>
+    </view>
+  </view>
+</view>

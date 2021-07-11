@@ -1,12 +1,19 @@
 Page({
-  onLoad(query) {
+  data: {
+    tabs: [{ title: "Bài đăng của tôi" }, { title: "Bài đăng nổi bật" }],
+    activeTab: 0,
   },
-  onReady() {
+  onTabClick({ index, tabsName }) {
+    this.setData({
+      [tabsName]: index,
+    });
   },
-  onShow() {
+  onTabChange({ index, tabsName }) {
+    this.setData({
+      [tabsName]: index,
+    });
   },
-  onHide() {
-  },
-  onUnload() {
+  onTap(e) {
+    my.alert({ content: 'Button Clicked' });
   }
 });

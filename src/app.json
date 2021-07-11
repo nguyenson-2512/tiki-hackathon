@@ -3,6 +3,7 @@
     "pages/index/index"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "Tiki Tech Forum",
+    "titleBarColor": "#1a94ff"
   }
 }

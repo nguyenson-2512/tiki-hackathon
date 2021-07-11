@@ -1,0 +1,19 @@
+.time-value {
+  color: var(--gray60);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.product-image {
+  width: 150px;
+  height: 60px;
+  border-radius: 4px;
+}
+
+.price-value {
+  color: var(--gray50);
+}

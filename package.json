@@ -4,5 +4,9 @@
   "tiki": {
     "appIdentifier": "app.demo",
     "buildNumber": 1
+  },
+  "dependencies": {
+    "@tiki.vn/tini-style": "^0.1.1",
+    "@tiki.vn/tini-ui": "^0.1.1"
   }
 }
