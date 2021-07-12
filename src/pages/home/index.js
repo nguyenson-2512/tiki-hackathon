@@ -8,12 +8,12 @@ Page({
       [tabsName]: index,
     });
   },
-  onTabChange({ index, tabsName }) {
+  onTabChange({ index, tabsNamse }) {
     this.setData({
       [tabsName]: index,
     });
   },
-  onTap(e) {
-    my.alert({ content: 'Button Clicked' });
+  navigateToCreate() {
+    my.navigateTo({ url: 'pages/create-new-post/index' });
   }
 });

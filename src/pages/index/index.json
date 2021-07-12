@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "create-new-post": "components/create-new-post/index",
-    "post-item": "components/post-item/index",
-    "tabs": "@tiki.vn/tini-ui/es/tabs/index",
-    "tab-content": "@tiki.vn/tini-ui/es/tabs/tab-content/index",
-    "button": "@tikivn/mini-ui/lib/button/index"
-  }
-}

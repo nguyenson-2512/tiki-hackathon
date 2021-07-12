@@ -3,12 +3,26 @@
   tabBarInactiveTextColor="#FFF">
   <tab-content key="0" tabId="{{0}}" activeTab="{{activeTab}}">
     <view class="content">
+      <view class="containerOutside">
+        <view class="container" onTap="navigateToCreate">
+          <icon
+            size="20"
+            type="plus"
+            color="var(--gray60)"/>
+            <text>Tạo mới</text>
+        </view>
+        <icon 
+          size="20"
+          type="home"
+          color="var(--gray60)"
+          class="item"/>
+      </view>
       <post-item />
     </view>
   </tab-content>
   <tab-content key="1" tabId="{{1}}" activeTab="{{activeTab}}">
     <view class="content">
-      <create-new-post />
+      <text>hello</text>
     </view>
   </tab-content>
 </tabs>

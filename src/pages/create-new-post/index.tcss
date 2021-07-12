@@ -1,7 +1,7 @@
 .item {
   font-size: 24px;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -30,16 +30,11 @@
 }
 
 .button {
-  margin-left: 130px;
-  margin-right: 130px;
-  margin-bottom: 30px;
+  width: 120px;
   border-radius: 5px;
   font-size: 16px;
   border-bottom-width: 2px;
   border-right-width: 2px;
   border-color:  #000000;
   justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
 }

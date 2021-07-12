@@ -1,1 +1,1 @@
-<view>{{activeTab}}</view>
+<view>{{activeTab}} notification list</view>

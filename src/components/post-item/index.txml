@@ -1,18 +1,4 @@
 <view class="flex flex-col pl-small pr-small">
-   <view class="containerOutside">
-    <view class="container">
-    <icon
-      size="20"
-      type="plus"
-      color="var(--gray60)"/>
-      <text>Tạo mới</text>
-  </view>
-   <icon 
-    size="20"
-    type="home"
-    color="var(--gray60)"
-    class="item"/>
-  </view>
   <view class="flex flex-row pt-2x-small">
     <view>
       <!-- todo: using avatar component -->
