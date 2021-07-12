@@ -8,7 +8,7 @@
   </tab-content>
   <tab-content key="1" tabId="{{1}}" activeTab="{{activeTab}}">
     <view class="content">
-      <create-new-post />
+      <text>hello</text>
     </view>
   </tab-content>
 </tabs>

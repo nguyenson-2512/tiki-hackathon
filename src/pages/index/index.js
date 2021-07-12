@@ -8,7 +8,7 @@ Page({
       [tabsName]: index,
     });
   },
-  onTabChange({ index, tabsName }) {
+  onTabChange({ index, tabsNamse }) {
     this.setData({
       [tabsName]: index,
     });
