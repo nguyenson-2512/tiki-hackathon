@@ -1,0 +1,7 @@
+view { 
+}
+
+.content {
+  padding: 16px 0;
+  background-color: var(--gray10);
+}
