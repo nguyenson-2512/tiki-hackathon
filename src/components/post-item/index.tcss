@@ -17,3 +17,17 @@
 .price-value {
   color: var(--gray50);
 }
+
+.container {
+  display: flex;
+  align-self: center;
+  border: 1px solid gray;
+  width: 80px;
+}
+.containerOutside {
+  display: flex;
+  align-self: center;
+}
+.item {
+      margin-left: 10px;
+}
