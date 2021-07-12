@@ -1,0 +1,41 @@
+<scroll-view>
+
+  <label >
+    <text class="item">
+      Tạo bài viết mới
+    </text>
+  </label>
+
+  <input class="text-box"
+          forcus="true"
+          confirm-type="Next"
+          placeholder="Tiêu đề"></input>
+
+  <input class="text-box"
+          confirm-type="Next"
+          placeholder="Tag"/>
+
+  <input class="text-box"
+          forcus="true"
+          confirm-type="Next"
+          placeholder="Link sản phẩm"/>
+
+  <block>
+    <image src="../../images/chon_anh.jpg"
+          class="image-select"/>
+  </block>
+  
+  <textarea class="text-box"
+          confirm-type="Next"
+          placeholder="Nội dung"
+          maxlength= "1000"
+          show-count="false"
+          auto-height="true"
+          controlled="true"/>
+
+  <button class="button"
+          onTap="onSubmit"
+          >Đăng
+  </button>
+
+</scroll-view>
