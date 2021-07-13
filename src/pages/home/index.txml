@@ -3,7 +3,7 @@
   tabBarInactiveTextColor="#FFF">
   <tab-content key="0" tabId="{{0}}" activeTab="{{activeTab}}">
     <view class="content">
-      <view class="containerOutside">
+      <view class="flex justify-center">
         <view class="container" onTap="navigateToCreate">
           <icon
             size="20"
@@ -11,18 +11,17 @@
             color="var(--gray60)"/>
             <text>Tạo mới</text>
         </view>
-        <icon 
-          size="20"
-          type="home"
-          color="var(--gray60)"
-          class="item"/>
       </view>
       <post-item />
     </view>
   </tab-content>
   <tab-content key="1" tabId="{{1}}" activeTab="{{activeTab}}">
     <view class="content">
-      <text>hello</text>
+      <view class="search-box" >
+        <icon type="search"/>
+        <input class="text-box" placeholder="Tìm kiếm" onFocus="navToSearch"/>
+      </view>
+      <post-item/>
     </view>
   </tab-content>
 </tabs>

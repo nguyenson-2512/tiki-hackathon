@@ -1,0 +1,38 @@
+<view class="style-search">
+  <view class="search-box" >
+    <icon type="search"/>
+    <input class="text-box" placeholder="Tìm kiếm" onFocus="navToSearch"/>
+    <icon type="setting"/>
+  </view>
+  <block>
+    <view class="item">
+      <view class= "flex flex-col">
+      <view class="flex flex-row">
+        <avatar size="md" style="margin:8px" src="https://firebasestorage.googleapis.com/v0/b/chat-app-1ef01.appspot.com/o/User%20Images%2F1619971265735.jpg?alt=media&token=3076546b-e9e4-4025-b759-59e0a88c32a5"/>
+        <view class="flex flex-row">
+          <view class="flex flex-col">
+            <view class="flex flex-row">
+              <text class="title" number-of-lines="2" >IOS 14 nóng?</text>
+              <icon class="title" type="arrow_right" color="var(--gray60)" />
+              <text class="title" >Phone</text>
+            </view>
+            <view class="flex flex-row">
+              <text class="user-name">Kha Banh</text>
+              <text class="text-time">- {{time}} giờ trước</text>
+             </view>
+          </view>
+          <view class="flex flex-col">
+            <text class="replies">Replies</text>
+            <text class="total-replies">5K</text>
+          </view>
+        </view>
+      </view>
+      <view class="c">
+        <text number-of-lines="1">
+          {{content}}
+        </text>
+      </view>
+      </view>
+    </view>
+  </block>
+</view>

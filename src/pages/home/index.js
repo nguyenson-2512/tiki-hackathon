@@ -15,5 +15,8 @@ Page({
   },
   navigateToCreate() {
     my.navigateTo({ url: 'pages/create-new-post/index' });
+  },
+  navToSearch() {
+    my.navigateTo({ url: 'pages/top-posts/index' });
   }
 });
