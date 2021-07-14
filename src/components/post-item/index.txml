@@ -72,6 +72,42 @@
     </view>
   </view>
   <input class="text-box" confirm-type="Done" placeholder="Viết bình luận..."></input>
-  
+  <view>
+    <block>
+    <view class="item">
+      <view class= "flex flex-col">
+      <view class="flex flex-row">
+        <avatar size="sm" style="margin-left: 0px; margin-right :8px;" src="https://firebasestorage.googleapis.com/v0/b/chat-app-1ef01.appspot.com/o/User%20Images%2F1619971265735.jpg?alt=media&token=3076546b-e9e4-4025-b759-59e0a88c32a5"/>
+        <view class="flex flex-row">
+          <view class="flex flex-col">
+            <view class="flex flex-row">
+              <text class="title" number-of-lines="2" >Kha Banh</text>
+              <text class="text-time" >. 6 giờ trước</text>
+            </view>
+            <view class="flex flex-row">
+              <text class="user-name">Hien tai e dang phan van khong biet nen mua iphone X hay iphone Xs max,moi nguoi cho e xin it loi khuyen voi</text>
+             </view>
+          </view>
+          <view class="flex flex-row">
+            <view class="flex flex-col">
+              <icon type="plus" color="#00FF00"/>
+              <text style="display: flex;align-self: center;">4</text>
+            </view>
+            <view class="flex flex-col">
+              <icon type="minus" color="#FF0000"/>
+              <text style="display: flex;align-self: center;">1</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="c">
+        <text number-of-lines="1">
+          {{content}}
+        </text>
+      </view>
+      </view>
+    </view>
+  </block>
+  </view>
 </view>
 </scroll-view>
