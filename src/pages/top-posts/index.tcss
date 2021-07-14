@@ -82,3 +82,8 @@
   margin-left: 1px;
   margin-right: 20px;
 }
+
+.component-item {
+  flex-direction: col;
+  align-items: center;
+}
