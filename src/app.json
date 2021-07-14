@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/index",
     "pages/notification/index",
-    "pages/create-new-post/index"
+    "pages/create-new-post/index",
+    "pages/top-posts/index"
   ],
   "tabBar": {
     "items": [

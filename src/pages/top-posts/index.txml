@@ -1,0 +1,90 @@
+<view class="style-search">
+  <view class="search-box" >
+    <icon type="search"/>
+    <input class="text-box" placeholder="Tìm kiếm" focus="true" onFocus="navToSearch"/>
+    <view onTap="onTap" style="height: 25px" style="background-color: white" data-popup="{{
+        show:true,
+        position:'top',
+        mask:true,
+        title: 'Click on mask to close popup',
+        disableScroll:true,
+        }}">
+       <icon type="setting" style="margin-top: 3px"/>
+    </view>
+  </view>
+  <block>
+    <view class="item">
+      <view class= "flex flex-col">
+      <view class="flex flex-row">
+        <avatar size="md" style="margin:8px" src="https://firebasestorage.googleapis.com/v0/b/chat-app-1ef01.appspot.com/o/User%20Images%2F1619971265735.jpg?alt=media&token=3076546b-e9e4-4025-b759-59e0a88c32a5"/>
+        <view class="flex flex-row">
+          <view class="flex flex-col">
+            <view class="flex flex-row">
+              <text class="title" number-of-lines="2" >IOS 14 nóng?</text>
+              <icon class="title" type="arrow_right" color="var(--gray60)" />
+              <text class="title" >Phone</text>
+            </view>
+            <view class="flex flex-row">
+              <text class="user-name">Kha Banh</text>
+              <text class="text-time">- {{time}} giờ trước</text>
+             </view>
+          </view>
+          <view class="flex flex-col">
+            <text class="replies">Replies</text>
+            <text class="total-replies">5K</text>
+          </view>
+        </view>
+      </view>
+      <view class="c">
+        <text number-of-lines="1">
+          {{content}}
+        </text>
+      </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view>
+   <popup
+      position="{{position}}"
+      show="{{show}}"
+      mask="{{mask}}"
+      disableScroll
+      zIndex="10"
+      onClose="onCancel"
+    >
+      <view style="
+        background-color:rgba(255, 248, 248, 0.856);
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        align-items:center
+        ">
+          <view style="padding:0 16px;text-align:center">Chọn bộ lọc</view>
+          <view class="flex flex-row" style="
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            aligh-items:center;
+            margin-top:32px;
+            ">
+
+            <checkbox-group onChange="onGroupChange">
+              <view class="component-item">
+                <checkbox value="check1" onChange="onChange" />
+                <text>Default</text>
+              </view>
+              <view class="component-item">
+                <checkbox value="check2" checked />
+                <text>Selected</text>
+              </view>
+            </checkbox-group>
+
+            <button
+              onTap="onCancel"
+              size="medium"
+              type="ghost">OK</button>
+          </view>
+      </view>
+    </popup>
+</view>
