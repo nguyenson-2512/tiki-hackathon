@@ -24,9 +24,7 @@ view {
   border-width: 5px;
 }
 
-.text-box {
-  display: flex;
-  flex-direction: row;
+.aaa {
   height: 25px;
   margin-bottom: 15px; 
   border-bottom-width: 2px;

@@ -19,5 +19,8 @@ Page({
   },
   onTap(e) {
     this.setData({ ...e.target.dataset.popup });
+  },
+  onChange() {
+
   }
 });

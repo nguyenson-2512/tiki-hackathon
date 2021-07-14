@@ -61,29 +61,57 @@
         align-items:center
         ">
           <view style="padding:0 16px;text-align:center">Chọn bộ lọc</view>
-          <view class="flex flex-row" style="
+          <view class="flex flex-col" style="
             display:flex;
-            flex-direction:row;
             justify-content:space-between;
             aligh-items:center;
             margin-top:32px;
             ">
-
             <checkbox-group onChange="onGroupChange">
-              <view class="component-item">
-                <checkbox value="check1" onChange="onChange" />
-                <text>Default</text>
+              <view class="flex flex-col">
+                <text>Lượt thích:</text>
+                <view class="flex flex-row">
+                  <view class="component-item">
+                    <checkbox value="check1" onChange="onChange" checked="{{true}}"/>
+                    <text style="margin-right: 20px;">Tăng dần</text>
+                  </view>
+                  <view class="component-item">
+                    <checkbox value="check2"  />
+                    <text>Giảm dần</text>
+                  </view>
+                </view>
               </view>
-              <view class="component-item">
-                <checkbox value="check2" checked />
-                <text>Selected</text>
+              <view class="flex flex-col">
+                <text>Lượt phản hồi:</text>
+                <view class="flex flex-row">
+                  <view class="component-item">
+                    <checkbox value="check1" onChange="onChange" checked="{{true}}"/>
+                    <text style="margin-right: 20px;">Tăng dần</text>
+                  </view>
+                  <view class="component-item">
+                    <checkbox value="check2"  />
+                    <text>Giảm dần</text>
+                  </view>
+                </view>
+              </view>
+              <view class="flex flex-col">
+                <text>Tag:</text>
+                <view class="flex flex-col">
+                  <view class="component-item">
+                    <checkbox value="check1" onChange="onChange" checked="{{true}}"/>
+                    <text style="margin-right: 20px;">Tăng dần</text>
+                  </view>
+                  <view class="component-item">
+                    <checkbox value="check2"  />
+                    <text>Giảm dần</text>
+                  </view>
+                </view>
               </view>
             </checkbox-group>
-
             <button
               onTap="onCancel"
               size="medium"
-              type="ghost">OK</button>
+              type="ghost">Xác nhận</button>
           </view>
       </view>
     </popup>

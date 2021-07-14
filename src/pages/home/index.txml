@@ -19,7 +19,7 @@
     <view class="content">
       <view class="search-box" >
         <icon type="search"/>
-        <input class="text-box" placeholder="Tìm kiếm" onFocus="navToSearch"/>
+        <input class="aaa" placeholder="Tìm kiếm" onFocus="navToSearch"/>
       </view>
       <post-item/>
     </view>

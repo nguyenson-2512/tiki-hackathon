@@ -1,4 +1,5 @@
-<view class="flex flex-col pl-small pr-small">
+<scroll-view>
+  <view class="flex flex-col pl-small pr-small">
   <view class="flex flex-row pt-2x-small">
     <view>
       <!-- todo: using avatar component -->
@@ -70,4 +71,7 @@
       <text>20</text>
     </view>
   </view>
+  <input class="text-box" confirm-type="Done" placeholder="Viết bình luận..."></input>
+  
 </view>
+</scroll-view>
