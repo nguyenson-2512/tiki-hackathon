@@ -67,7 +67,7 @@
             aligh-items:center;
             margin-top:32px;
             ">
-            <checkbox-group onChange="onGroupChange">
+            <view onChange="onGroupChange">
               <view class="flex flex-col">
                 <text>Lượt thích:</text>
                 <view class="flex flex-row">
@@ -99,15 +99,15 @@
                 <view class="flex flex-col">
                   <view class="component-item">
                     <checkbox value="check1" onChange="onChange" checked="{{true}}"/>
-                    <text style="margin-right: 20px;">Tăng dần</text>
+                    <text style="margin-right: 20px;">Điện thoại</text>
                   </view>
                   <view class="component-item">
                     <checkbox value="check2"  />
-                    <text>Giảm dần</text>
+                    <text>Phụ kiện</text>
                   </view>
                 </view>
               </view>
-            </checkbox-group>
+            </view>
             <button
               onTap="onCancel"
               size="medium"

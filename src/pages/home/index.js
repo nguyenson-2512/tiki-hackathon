@@ -15,6 +15,7 @@ Page({
   },
   navigateToCreate() {
     my.navigateTo({ url: 'pages/create-new-post/index' });
+    console.log("hhee             ");  
   },
   navToSearch() {
     my.navigateTo({ url: 'pages/top-posts/index' });
