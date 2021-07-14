@@ -12,21 +12,21 @@
        <icon type="setting" style="margin-top: 3px"/>
     </view>
   </view>
-  <block>
-    <view class="item">
+  <block tiki:for="{{times}}">
+    <view class="item1">
       <view class= "flex flex-col">
       <view class="flex flex-row">
-        <avatar size="md" style="margin:8px" src="https://firebasestorage.googleapis.com/v0/b/chat-app-1ef01.appspot.com/o/User%20Images%2F1619971265735.jpg?alt=media&token=3076546b-e9e4-4025-b759-59e0a88c32a5"/>
+        <avatar size="md" style="margin:8px" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/90203015_10158237720437769_4332317920743915520_n.png?_nc_cat=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=M3MRu-Lv04cAX-pNDJu&_nc_ht=scontent-hkt1-1.xx&oh=a8993067e14e9365a62e5d9ae9e6593e&oe=60F45F2C"/>
         <view class="flex flex-row">
           <view class="flex flex-col">
-            <view class="flex flex-row">
+            <view class="flex flex-row" style="width: 187px;">
               <text class="title" number-of-lines="2" >IOS 14 nóng?</text>
               <icon class="title" type="arrow_right" color="var(--gray60)" />
               <text class="title" >Phone</text>
             </view>
             <view class="flex flex-row">
-              <text class="user-name">Kha Banh</text>
-              <text class="text-time">- {{time}} giờ trước</text>
+              <text class="user-name">{{na}}</text>
+              <text class="text-time">. {{item}} giờ trước</text>
              </view>
           </view>
           <view class="flex flex-col">

@@ -28,8 +28,9 @@
   display: flex;
   align-self: center;
 }
-.item {
+.item1 {
       margin-left: 10px;
+      margin-bottom: 15px;
 }
 
 .text-box {
