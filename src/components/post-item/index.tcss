@@ -28,6 +28,60 @@
   display: flex;
   align-self: center;
 }
-.item {
+.item1 {
       margin-left: 10px;
+      margin-bottom: 15px;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  height: 25px;
+  border-bottom-width: 2px;
+  border-left-color: #FFFFFF;
+  border-right-color: #FFFFFF;
+  border-bottom-color: #000000;
+  border-top-color: #FFFFFF;
+}
+
+
+.item {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.user-name{
+  margin-top: 6px;
+
+}
+.text-time {
+  margin-top: 3px;
+  padding-left: 15px;
+  font-style: italic;
+}
+
+.title {
+  margin-top: 3px;
+  font-weight: bold;
+  max-width: 110px;
+}
+
+.replies {
+  display: flex;
+  font-style: italic;  
+  margin-top: 3px;
+  margin-left: 10px;
+}
+.total-replies {
+  margin-top: 6px;
+  margin-left: 25px;
+  font-weight: bold;
+}
+
+.c {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 280px;
+  color: #D8BFD8;
 }

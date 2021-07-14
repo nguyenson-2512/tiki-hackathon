@@ -12,21 +12,21 @@
        <icon type="setting" style="margin-top: 3px"/>
     </view>
   </view>
-  <block>
-    <view class="item">
+  <block tiki:for="{{times}}">
+    <view class="item1">
       <view class= "flex flex-col">
       <view class="flex flex-row">
-        <avatar size="md" style="margin:8px" src="https://firebasestorage.googleapis.com/v0/b/chat-app-1ef01.appspot.com/o/User%20Images%2F1619971265735.jpg?alt=media&token=3076546b-e9e4-4025-b759-59e0a88c32a5"/>
+        <avatar size="md" style="margin:8px" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/90203015_10158237720437769_4332317920743915520_n.png?_nc_cat=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=M3MRu-Lv04cAX-pNDJu&_nc_ht=scontent-hkt1-1.xx&oh=a8993067e14e9365a62e5d9ae9e6593e&oe=60F45F2C"/>
         <view class="flex flex-row">
           <view class="flex flex-col">
-            <view class="flex flex-row">
+            <view class="flex flex-row" style="width: 187px;">
               <text class="title" number-of-lines="2" >IOS 14 nóng?</text>
               <icon class="title" type="arrow_right" color="var(--gray60)" />
               <text class="title" >Phone</text>
             </view>
             <view class="flex flex-row">
-              <text class="user-name">Kha Banh</text>
-              <text class="text-time">- {{time}} giờ trước</text>
+              <text class="user-name">{{na}}</text>
+              <text class="text-time">. {{item}} giờ trước</text>
              </view>
           </view>
           <view class="flex flex-col">
@@ -61,29 +61,57 @@
         align-items:center
         ">
           <view style="padding:0 16px;text-align:center">Chọn bộ lọc</view>
-          <view class="flex flex-row" style="
+          <view class="flex flex-col" style="
             display:flex;
-            flex-direction:row;
             justify-content:space-between;
             aligh-items:center;
             margin-top:32px;
             ">
-
             <checkbox-group onChange="onGroupChange">
-              <view class="component-item">
-                <checkbox value="check1" onChange="onChange" />
-                <text>Default</text>
+              <view class="flex flex-col">
+                <text>Lượt thích:</text>
+                <view class="flex flex-row">
+                  <view class="component-item">
+                    <checkbox value="check1" onChange="onChange" checked="{{true}}"/>
+                    <text style="margin-right: 20px;">Tăng dần</text>
+                  </view>
+                  <view class="component-item">
+                    <checkbox value="check2"  />
+                    <text>Giảm dần</text>
+                  </view>
+                </view>
               </view>
-              <view class="component-item">
-                <checkbox value="check2" checked />
-                <text>Selected</text>
+              <view class="flex flex-col">
+                <text>Lượt phản hồi:</text>
+                <view class="flex flex-row">
+                  <view class="component-item">
+                    <checkbox value="check1" onChange="onChange" checked="{{true}}"/>
+                    <text style="margin-right: 20px;">Tăng dần</text>
+                  </view>
+                  <view class="component-item">
+                    <checkbox value="check2"  />
+                    <text>Giảm dần</text>
+                  </view>
+                </view>
+              </view>
+              <view class="flex flex-col">
+                <text>Tag:</text>
+                <view class="flex flex-col">
+                  <view class="component-item">
+                    <checkbox value="check1" onChange="onChange" checked="{{true}}"/>
+                    <text style="margin-right: 20px;">Tăng dần</text>
+                  </view>
+                  <view class="component-item">
+                    <checkbox value="check2"  />
+                    <text>Giảm dần</text>
+                  </view>
+                </view>
               </view>
             </checkbox-group>
-
             <button
               onTap="onCancel"
               size="medium"
-              type="ghost">OK</button>
+              type="ghost">Xác nhận</button>
           </view>
       </view>
     </popup>

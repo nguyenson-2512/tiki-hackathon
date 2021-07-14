@@ -4,6 +4,8 @@ Page({
   },
 
   onSubmit() {
-    my.alert("aaa");
+    my.alert({
+      content: 'Form value：${JSON.stringify(e.detail.value)}'
+    });
   },
 });

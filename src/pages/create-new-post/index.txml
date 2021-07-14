@@ -15,7 +15,7 @@
   </block>
 
   <textarea class="text-box" confirm-type="Next" placeholder="Nội dung" maxlength="1000" show-count="false"
-    auto-height="true" controlled="true" />
+    auto-height="true" />
 
   <view style="width: 100%;" class="flex justify-center">
     <button class="button" onTap="onSubmit">Đăng</button>
