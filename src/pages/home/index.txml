@@ -12,7 +12,9 @@
             <text>Tạo mới</text>
         </view>
       </view>
-      <post-item />
+      <block tiki:for="{{myList}}">
+        <post-item post={{item}} />
+      </block>
     </view>
   </tab-content>
   <tab-content key="1" tabId="{{1}}" activeTab="{{activeTab}}">

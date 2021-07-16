@@ -24,7 +24,7 @@ Page({
     this.setData({
       [tabsName]: index,
     });
-    if(index == 0 & !this.data.myList) {
+    if(index == 0 && !this.data.myList) {
       my.getStorage({
         key: 'user',
         success: function (res) {
@@ -35,7 +35,7 @@ Page({
               success: (response) => {
                 console.log(response, 'my list');
                 this.setData({
-                  topList: response.data
+                  myList: response.data
                 })
               }
             });
@@ -45,9 +45,6 @@ Page({
           my.alert({ content: res.errorMessage });
         }
       });
-      this.setData({
-        myList: [1,2,3]
-      })
     }
   },
   onTabChange({ index, tabsNamse }) {
