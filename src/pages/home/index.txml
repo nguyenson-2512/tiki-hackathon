@@ -21,7 +21,9 @@
         <icon type="search"/>
         <input class="aaa" placeholder="Tìm kiếm" onFocus="navToSearch"/>
       </view>
-      <post-item/>
+      <block tiki:for="{{topList}}">
+        <post-item post={{item}} />
+      </block>
     </view>
   </tab-content>
 </tabs>
