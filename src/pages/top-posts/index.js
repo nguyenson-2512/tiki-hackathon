@@ -27,16 +27,6 @@ Page({
     //     my.alert({ content: res.errorMessage });
     //   }
     // });
-    my.request({
-      url: 'https://tiki-be.herokuapp.com/api/get-top-posts',
-      method: 'GET',
-      success: (response) => {
-        console.log(response, 'list');
-      },
-      fail: (re) => {
-        console.log('haha')
-      }
-    });
   },
   onShow() {
     console.log('hshhshsh')

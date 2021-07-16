@@ -6,18 +6,20 @@
       <image src="../../images/pikachu.png" class="avatar mr-medium" />
     </view>
     <view class="flex flex-col">
-      <view class="font-bold ">Michal Nguyen</view>
+      <view class="font-bold ">{{post.author.name}}</view>
       <view class="flex flex-row">
-        <view class="time-value">6 hours ago</view>
+        <view class="time-value">{{post.createdAt}}</view>
         <!-- todo: find icon tag -->
         <icon type="arrow_right" color="var(--gray60)" />
-        <text>Phone</text>
+        <block tiki:for="{{post.tags}}">
+          <view> {{item}}  </view>
+        </block>
       </view>
     </view>
   </view>
   <view class="flex flex-row items-center">
     <text number-of-lines="{{3}}">
-      Hien tai e dang phan van khong biet nen mua iphone X hay iphone Xs max,moi nguoi cho e xin it loi khuyen voi
+      {{post.description}}
     </text>
   </view>
   <view class="flex flex-col pt-2x-small">
@@ -64,7 +66,7 @@
     <!-- todo: like icon -->
     <view class="mr-medium flex justify-center items-center">
       <icon type="plus" size="30" color="var(--gray60)" />
-      <text>10</text>
+      <text>{{post.like.length}}</text>
     </view>
     <view class="mr-medium flex justify-center items-center">
       <icon type="chat" color="var(--gray90)" class="mr-4x-small"/>
