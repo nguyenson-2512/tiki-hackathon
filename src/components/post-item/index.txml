@@ -10,7 +10,9 @@
       <view class="flex flex-row">
         <view class="time-value">{{time-of-post}} ngay truoc</view>
         <image src="../../images/tag.png" style="width: 18px; height: 18px; margin-left: 10px; margin-right: 5px;"></image>
-        <text>{{tags}} Phone</text>
+        <block tiki:for="{{post.tags}}">
+          <view> {{item}}  </view>
+        </block>
       </view>
     </view>
   </view>
