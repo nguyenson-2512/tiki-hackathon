@@ -24,7 +24,6 @@
       <block tiki:for="{{topList}}">
         <post-item post={{item}} />
       </block>
-      <post-item/>
     </view>
   </tab-content>
 </tabs>
