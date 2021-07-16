@@ -1,8 +1,9 @@
 Page({
   data: {
     tabs: [{ title: "Bài đăng của tôi" }, { title: "Bài đăng nổi bật" }],
-    activeTab: 0,
-    topList: null
+    activeTab: 1,
+    topList: null,
+    myList: null
   },
   onLoad() {
     my.request({
@@ -23,6 +24,31 @@ Page({
     this.setData({
       [tabsName]: index,
     });
+    if(index == 0 & !this.data.myList) {
+      my.getStorage({
+        key: 'user',
+        success: function (res) {
+          if(res) {
+            my.request({
+              url: `https://tiki-be.herokuapp.com/api/get-my-posts/${res.data.customer.id}`,
+              method: 'GET',
+              success: (response) => {
+                console.log(response, 'my list');
+                this.setData({
+                  topList: response.data
+                })
+              }
+            });
+          }
+        },
+        fail: function (res) {
+          my.alert({ content: res.errorMessage });
+        }
+      });
+      this.setData({
+        myList: [1,2,3]
+      })
+    }
   },
   onTabChange({ index, tabsNamse }) {
     this.setData({
