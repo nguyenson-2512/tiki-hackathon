@@ -6,9 +6,9 @@
       <avatar size="sm" style="margin-right: 8px" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/90203015_10158237720437769_4332317920743915520_n.png?_nc_cat=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=M3MRu-Lv04cAX-pNDJu&_nc_ht=scontent-hkt1-1.xx&oh=a8993067e14e9365a62e5d9ae9e6593e&oe=60F45F2C" />
     </view>
     <view class="flex flex-col">
-      <view class="font-bold ">{{name-of-user}}</view>
+      <view class="font-bold ">{{post.author.name}}</view>
       <view class="flex flex-row">
-        <view class="time-value">{{time-of-post}} ngay truoc</view>
+        <view class="time-value">{{post.createdAt}}ngay truoc</view>
         <image src="../../images/tag.png" style="width: 18px; height: 18px; margin-left: 10px; margin-right: 5px;"></image>
         <block tiki:for="{{post.tags}}">
           <view> {{item}}  </view>
@@ -18,7 +18,7 @@
   </view>
   <view class="flex flex-row items-center">
     <text number-of-lines="{{3}}">
-      {{post-content}}
+      {{post.description}}
     </text>
   </view>
   <view class="flex flex-col pt-2x-small">
@@ -35,7 +35,7 @@
   <view class="flex flex-row" style="margin-top: 15px;">
     <view class="mr-medium flex justify-center items-center" onTap="clickLike">
       <image src="../../images/like.png" style="width: 25px; height: 25px; margin-right: 3px;"></image>
-      <text>{{numberOfLike}}</text>
+      <text>{{post.like.length}}</text>
     </view>
     <view class="mr-medium flex justify-center items-center" onTap="openComment">
       <icon type="chat" color="var(--gray90)" class="mr-4x-small"/>
