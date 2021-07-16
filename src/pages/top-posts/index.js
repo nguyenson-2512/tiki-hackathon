@@ -17,6 +17,29 @@ Page({
     //   success: (res) => {this.setData({ avt: res.avatar, na: res.name })},
     //   fail: (res) => {}
     // });
+
+    //  my.getStorage({
+    //   key: 'user',
+    //   success: function (res) {
+    //     my.alert({ content: 'Title' + res.data.title });
+    //   },
+    //   fail: function (res) {
+    //     my.alert({ content: res.errorMessage });
+    //   }
+    // });
+    my.request({
+      url: 'https://tiki-be.herokuapp.com/api/get-top-posts',
+      method: 'GET',
+      success: (response) => {
+        console.log(response, 'list');
+      },
+      fail: (re) => {
+        console.log('haha')
+      }
+    });
+  },
+  onShow() {
+    console.log('hshhshsh')
   },
   onOk() {
     this.setData({ show: false });
