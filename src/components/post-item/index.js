@@ -18,6 +18,10 @@ Component({
     time: 1,
     more: false,
     description: "NGHIÊNG s",
+    post: []
+  },
+  didMount() {
+    this.setData({post: this.props.post})
   },
 
   methods: {
@@ -30,7 +34,6 @@ Component({
     }
     this.setData({
       post: this.props.post, 
-      time: this.props.post.createdAt.slice(0, 10),
       numberOfLike: this.props.post.like.length})
     },  
 
@@ -46,7 +49,6 @@ Component({
     
     clickLike() {
       if (likeStatus == false) {
-        this.setData({ numberOfLike: this.props.post.like.length + 1 });
         likeStatus = true;
       }
     },

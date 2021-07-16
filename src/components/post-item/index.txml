@@ -8,7 +8,7 @@
     <view class="flex flex-row">
       <view class="flex flex-col"> 
         <view class="font-bold ">{{post.author.name}}</view>
-        <view class="time-value">{{time}}</view>
+        <view class="time-value">{{post.createdAt}}</view>
       </view>
       <view class="flex flex-row">
         <image src="../../images/tag.png" style="width: 18px; height: 18px; margin-left: 10px; margin-right: 5px;"></image>
@@ -20,7 +20,6 @@
   </view>
   <view class="flex flex-row items-center">
     <text number-of-lines="{{3}}">
-      <!-- {{post.description}} -->
       {{description}}
     </text>
   </view>
@@ -39,7 +38,7 @@
   <view class="flex flex-row" style="margin-top: 15px;">
     <view class="mr-medium flex justify-center items-center" onTap="clickLike">
       <image src="../../images/like.png" style="width: 25px; height: 25px; margin-right: 3px;"></image>
-      <text>{{numberOfLike}}</text>
+      <text>{{post.like.length}}</text>
     </view>
     <view class="mr-medium flex justify-center items-center" onTap="openComment">
       <icon type="chat" color="var(--gray90)" class="mr-4x-small"/>
