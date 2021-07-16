@@ -3,98 +3,67 @@
   <view class="flex flex-row pt-2x-small">
     <view>
       <!-- todo: using avatar component -->
-      <image src="../../images/pikachu.png" class="avatar mr-medium" />
+      <avatar size="sm" style="margin-right: 8px" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/90203015_10158237720437769_4332317920743915520_n.png?_nc_cat=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=M3MRu-Lv04cAX-pNDJu&_nc_ht=scontent-hkt1-1.xx&oh=a8993067e14e9365a62e5d9ae9e6593e&oe=60F45F2C" />
     </view>
     <view class="flex flex-col">
-      <view class="font-bold ">Michal Nguyen</view>
+      <view class="font-bold ">{{name-of-user}}</view>
       <view class="flex flex-row">
-        <view class="time-value">6 hours ago</view>
-        <!-- todo: find icon tag -->
-        <icon type="arrow_right" color="var(--gray60)" />
-        <text>Phone</text>
+        <view class="time-value">{{time-of-post}} ngay truoc</view>
+        <image src="../../images/tag.png" style="width: 18px; height: 18px; margin-left: 10px; margin-right: 5px;"></image>
+        <text>{{tags}} Phone</text>
       </view>
     </view>
   </view>
   <view class="flex flex-row items-center">
     <text number-of-lines="{{3}}">
-      Hien tai e dang phan van khong biet nen mua iphone X hay iphone Xs max,moi nguoi cho e xin it loi khuyen voi
+      {{post-content}}
     </text>
   </view>
   <view class="flex flex-col pt-2x-small">
-    <view class="flex flex-row justify-between mb-medium">
-      <view class="flex">
-      <view class="flex flex-row">
-        <image src="../../images/forum.png" class="product-image mr-medium"/>
-      </view>
-      <view class="flex flex-col justify-center">
-        <view class="font-bold text-medium">
-          Iphone X
-        </view>
-        <view class="price-value text-base">
-          2.000.000 đ
-        </view>
-      </view>
-      </view>
-      <view class="flex items-center">
-        <icon type="arrow_right" size="40" color="var(--gray60)" />
-      </view>
-    </view>
     <!-- todo: map via list -->
     <view class="flex flex-row justify-between">
       <view class="flex">
       <view class="flex flex-row">
-        <image src="../../images/forum.png" class="product-image mr-medium"/>
+        <image src="../../images/forum.png" class="product-image"/>
       </view>
-      <view class="flex flex-col justify-center">
-        <view class="font-bold text-medium">
-          Iphone X
-        </view>
-        <view class="price-value text-base">
-          2.000.000 đ
-        </view>
-      </view>
-      </view>
-      <view class="flex items-center">
-        <icon type="arrow_right" size="40" color="var(--gray60)" />
       </view>
     </view>
   </view>
 
-  <view class="flex flex-row">
-    <!-- todo: like icon -->
-    <view class="mr-medium flex justify-center items-center">
-      <icon type="plus" size="30" color="var(--gray60)" />
-      <text>10</text>
+  <view class="flex flex-row" style="margin-top: 15px;">
+    <view class="mr-medium flex justify-center items-center" onTap="clickLike">
+      <image src="../../images/like.png" style="width: 25px; height: 25px; margin-right: 3px;"></image>
+      <text>{{numberOfLike}}</text>
     </view>
-    <view class="mr-medium flex justify-center items-center">
+    <view class="mr-medium flex justify-center items-center" onTap="openComment">
       <icon type="chat" color="var(--gray90)" class="mr-4x-small"/>
-      <text>20</text>
+      <text>{{number-of-comments}}</text>
     </view>
   </view>
-  <input class="text-box" confirm-type="Done" placeholder="Viết bình luận..."></input>
-  <view>
+  <view tiki:if="{{show}}">
+    <input class="text-box" confirm-type="Done" placeholder="Viết bình luận..."></input>
     <block tiki:for="{{cmts}}">
-    <view class="item1">
+    <view class="item1" style="margin-top: 15px;">
       <view class= "flex flex-col">
       <view class="flex flex-row">
-        <avatar size="sm" style="margin-left: 0px; margin-right :8px;" src="https://firebasestorage.googleapis.com/v0/b/chat-app-1ef01.appspot.com/o/User%20Images%2F1619971265735.jpg?alt=media&token=3076546b-e9e4-4025-b759-59e0a88c32a5"/>
+        <avatar size="sm" style="margin-left: 0px; margin-right :8px; max-height: 50px;" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/90203015_10158237720437769_4332317920743915520_n.png?_nc_cat=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=M3MRu-Lv04cAX-pNDJu&_nc_ht=scontent-hkt1-1.xx&oh=a8993067e14e9365a62e5d9ae9e6593e&oe=60F45F2C"/>
         <view class="flex flex-row">
-          <view class="flex flex-col">
+          <view class="flex flex-col" style="width: 185px;">
             <view class="flex flex-row">
-              <text class="title" number-of-lines="2" >Kha Banh</text>
-              <text class="text-time" >. {{item}} giờ trước</text>
+              <text class="title" number-of-lines="2" >Tiger Tran</text>
+              <text class="text-time" >. {{item}} ngay trước</text>
             </view>
             <view class="flex flex-row">
-              <text class="user-name">Hien tai e dang phan van khong biet nen mua iphone X hay iphone Xs max,moi nguoi cho e xin it loi khuyen voi</text>
+              <text class="user-name">{{content-of-comment}}</text>
              </view>
           </view>
-          <view class="flex flex-row">
-            <view class="flex flex-col">
-              <icon type="plus" color="#00FF00"/>
+          <view style="display: flex; align-self: center;" class="flex flex-row">
+            <view class="flex flex-col"  >
+              <image src="../../images/smile.png" class="avatar" style="width: 25px; height: 25px; margin-right: 3px;"></image>
               <text style="display: flex;align-self: center;">4</text>
             </view>
             <view class="flex flex-col">
-              <icon type="minus" color="#FF0000"/>
+               <image src="../../images/angry.png" class="avatar" style="width: 25px; height: 25px; margin-right: 3px;"></image>
               <text style="display: flex;align-self: center;">1</text>
             </view>
           </view>

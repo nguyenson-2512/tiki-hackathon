@@ -10,14 +10,14 @@
       {
         "name": "Home",
         "pagePath": "pages/home/index",
-        "icon": "images/forum.png",
-        "activeIcon": "images/forum.png"
+        "icon": "images/home.png",
+        "activeIcon": "images/home-active.png"
       },
       {
         "name": "Notification",
         "pagePath": "pages/notification/index",
-        "icon": "images/pikachu.png",
-        "activeIcon": "images/pikachu.png"
+        "icon": "images/notification.png",
+        "activeIcon": "images/notification-active.png"
       }
     ]
   },

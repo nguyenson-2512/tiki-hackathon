@@ -9,7 +9,7 @@
             size="20"
             type="plus"
             color="var(--gray60)"/>
-            <text>Tạo mới</text>
+            <text>{{abc}}</text>
         </view>
       </view>
       <post-item />

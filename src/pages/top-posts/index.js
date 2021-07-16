@@ -13,10 +13,10 @@ Page({
     na: "User Name"
   },
   onLoad() {
-    // my.getUserInfo({
-    //   success: (res) => {this.setData({ avt: res.avatar, na: res.name })},
-    //   fail: (res) => {}
-    // });
+    my.getUserInfo({
+      success: (res) => {this.setData({ avt: res.avatar, na: res.name })},
+      fail: (res) => {}
+    });
   },
   onOk() {
     this.setData({ show: false });

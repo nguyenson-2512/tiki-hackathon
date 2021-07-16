@@ -9,7 +9,7 @@
         title: 'Click on mask to close popup',
         disableScroll:true,
         }}">
-       <icon type="setting" style="margin-top: 3px"/>
+       <image src="../../images/filter.png" style="width: 20px; height: 20px; margin-top: 2px;"></image>
     </view>
   </view>
   <block tiki:for="{{times}}">
@@ -21,7 +21,7 @@
           <view class="flex flex-col">
             <view class="flex flex-row" style="width: 187px;">
               <text class="title" number-of-lines="2" >IOS 14 nóng?</text>
-              <icon class="title" type="arrow_right" color="var(--gray60)" />
+              <image src="../../images/tag.png" style="width: 18px; height: 18px; margin-right: 3px; margin-left: 5px; margin-top: 3px;"></image>
               <text class="title" >Phone</text>
             </view>
             <view class="flex flex-row">
