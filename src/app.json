@@ -3,6 +3,7 @@
     "pages/home/index",
     "pages/notification/index",
     "pages/create-new-post/index",
+    "pages/post-detail/index",
     "pages/top-posts/index"
   ],
   "tabBar": {

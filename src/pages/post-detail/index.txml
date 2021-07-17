@@ -1,6 +1,6 @@
 <scroll-view>
   <view class="flex flex-col pl-small pr-small">
-    <view onTap="navToDetail" data-item="{{ post._id }}">
+    <view onTap="navToDetail">
       <view class="flex flex-row pt-2x-small">
         <view>
           <avatar size="sm" style="margin-right: 8px" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/90203015_10158237720437769_4332317920743915520_n.png?_nc_cat=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=M3MRu-Lv04cAX-pNDJu&_nc_ht=scontent-hkt1-1.xx&oh=a8993067e14e9365a62e5d9ae9e6593e&oe=60F45F2C" />
@@ -8,7 +8,7 @@
         <view class="flex flex-row">
           <view class="flex flex-col"> 
             <view class="font-bold ">{{post.author.name}}</view>
-            <view class="time-value">{{time}}</view>
+            <view class="time-value">{{post.createdAt}}</view>
           </view>
           <view class="flex flex-col">
             <block tiki:for="{{post.tags}}">
@@ -21,11 +21,10 @@
         </view>
       </view>
       <view class="flex flex-row items-center">
-        <text number-of-lines="{{3}}">
-          {{description}}
+        <text>
+          {{post.description}}
         </text>
       </view>
-      <text tiki:if="{{more}}" style="color:cadetblue">xem thêm</text>
       <view class="flex flex-col pt-2x-small">
         <!-- todo: map via list -->
         <view class="flex flex-row justify-between">
@@ -49,7 +48,7 @@
       <text>{{number-of-comments}}</text>
     </view>
   </view>
-  <view tiki:if="{{show}}">
+  <view>
     <input class="text-box" confirm-type="Done" placeholder="Viết bình luận..."></input>
     <block tiki:for="{{cmts}}">
     <view class="item1" style="margin-top: 15px;">
