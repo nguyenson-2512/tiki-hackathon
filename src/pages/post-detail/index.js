@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 Page({
   data: {
     post: null,
@@ -11,13 +13,18 @@ Page({
       url: 'https://tiki-be.herokuapp.com/api/post/' + options,
       method: 'GET',
       success: (response) => {
-        console.log(response, 'list');
+        console.log(response, 'list from success');
         this.setData({
           post: response.data
         })
       },
       fail: (re) => {
         console.log('haha')
+      },
+      complete: (re) => {
+        this.setData({
+          post: {...this.data.post, createdAt: moment(this.data.post.createdAt).fromNow()}
+        })
       }
     });
   },
