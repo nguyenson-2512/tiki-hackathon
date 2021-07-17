@@ -8,7 +8,7 @@
     <view class="flex flex-row">
       <view class="flex flex-col"> 
         <view class="font-bold ">{{post.author.name}}</view>
-        <view class="time-value">{{post.createdAt}}</view>
+        <view class="time-value">{{time}}</view>
       </view>
       <view class="flex flex-row">
         <image src="../../images/tag.png" style="width: 18px; height: 18px; margin-left: 10px; margin-right: 5px;"></image>

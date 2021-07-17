@@ -1,6 +1,7 @@
 var statusClick =  false;
 var likeStatus =  false;
 var rs = "";
+var moment = require('moment');
 
 function truncate( str, n ){
   if (str.toString().length <= n) { return str.toString(); }
@@ -15,7 +16,7 @@ Component({
     show: false,
     numberOfLike: 0,
     post: [],
-    time: 1,
+    time: '',
     more: false,
     description: "NGHIÊNG s",
     post: []
@@ -34,7 +35,8 @@ Component({
     }
     this.setData({
       post: this.props.post, 
-      numberOfLike: this.props.post.like.length})
+      numberOfLike: this.props.post.like.length,
+      time: moment(this.props.post.createdAt).fromNow()})
     },  
 
     openComment() {
