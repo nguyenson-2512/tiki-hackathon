@@ -1,1 +1,18 @@
-<view>{{activeTab}} notification list</view>
+<block tiki:for="{{notificationList}}">
+  <!--todo: click item navigate detail post -->
+  <view class="flex flex-row">
+    <view>
+      <image src="{{item.influencer.avatar}} " class="avatar mr-medium" />
+    </view>
+    <view class="flex flex-col">
+      <view>
+        <text class="font-bold mr-medium">{{item.influencer.name}} </text>
+        <text class="time-value">{{item.createdAt}}</text>
+      </view>
+      <view class="flex flex-row">
+        <text class="mr-small ">{{item.influencer.name}} {{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+
