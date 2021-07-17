@@ -3,7 +3,13 @@ Page({
     tabs: [{ title: "Bài đăng của tôi" }, { title: "Bài đăng nổi bật" }],
     activeTab: 1,
     topList: null,
-    myList: null
+    myList: null,
+    show: false,
+    position: 'top',
+    animation: true,
+    mask: true,
+    zIndex: 10,
+    disableScroll: true,
   },
   onLoad() {
     my.request({
@@ -57,5 +63,11 @@ Page({
   },
   navToSearch() {
     my.navigateTo({ url: 'pages/top-posts/index' });
-  }
+  },
+  onCancel() {
+    this.setData({ show: false });
+  },
+  onTap(e) {
+    this.setData({ ...e.target.dataset.popup });
+  },
 });

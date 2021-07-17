@@ -1,5 +1,3 @@
-var statusClick =  false;
-var likeStatus =  false;
 var rs = "";
 var moment = require('moment');
 
@@ -39,24 +37,10 @@ Component({
       time: moment(this.props.post.createdAt).fromNow()})
     },  
 
-    openComment() {
-      if (statusClick == false) {
-        this.setData({ show: true});
-        statusClick = true;
-      } else {
-        this.setData({ show: false});
-         statusClick = false
-      }
-    },
-    
-    clickLike() {
-      if (likeStatus == false) {
-        likeStatus = true;
-      }
-    },
-
-    testNav() {
-      my.navigateTo({ url: 'pages/create-new-post/index' })
-    }
+    navToDetail(event) {
+      const id = event.target.dataset.item;
+      console.log(event);
+      my.navigateTo({ url: "pages/post-detail/index?" + id});
+    }  
   }
 });

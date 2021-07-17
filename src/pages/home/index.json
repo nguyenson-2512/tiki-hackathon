@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "post-item": "components/post-item/index",
+    "popup": "@tiki.vn/tini-ui/es/popup/index",
     "tabs": "@tiki.vn/tini-ui/es/tabs/index",
     "tab-content": "@tiki.vn/tini-ui/es/tabs/tab-content/index",
     "button": "@tikivn/mini-ui/lib/button/index"
