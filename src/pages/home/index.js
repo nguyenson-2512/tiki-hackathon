@@ -1,3 +1,5 @@
+var {filter} = require('lodash');
+
 Page({
   data: {
     tabs: [{ title: "Bài đăng của tôi" }, { title: "Bài đăng nổi bật" }],
@@ -10,6 +12,10 @@ Page({
     mask: true,
     zIndex: 10,
     disableScroll: true,
+    fullTopList: null,
+    search: '',
+    filterLike: '',
+    filterTag: ["phone", "accessory", "laptop", "other"]
   },
   onLoad() {
     my.request({
@@ -18,7 +24,8 @@ Page({
       success: (response) => {
         console.log(response, 'list');
         this.setData({
-          topList: response.data
+          topList: response.data,
+          fullTopList: response.data
         })
       },
       fail: (re) => {
@@ -65,9 +72,45 @@ Page({
     my.navigateTo({ url: 'pages/top-posts/index' });
   },
   onCancel() {
+    if(this.data.filterLike == 'increment') {
+      const filteredData = [...this.data.fullTopList].reverse();
+      this.setData({
+        topList: filteredData
+      })
+    }
     this.setData({ show: false });
   },
   onTap(e) {
     this.setData({ ...e.target.dataset.popup });
+  },
+  handleInputSearch(event) {
+    this.setData({
+      search: event.detail.value
+    })
+    function contains(post, query) {
+      if (post.description.includes(query)) {
+        return true;
+      }
+      return false;
+    }
+    const formattedQuery = event.detail.value.toLowerCase();
+    const filteredData = filter(this.data.fullTopList, (post) => {
+      return contains(post, formattedQuery);
+    });
+    this.setData({
+      topList: filteredData
+    })
+  },
+  onChange(e) {
+    console.log('onChange', e);
+    this.setData({
+      filterLike: e.detail.value
+    })
+  },
+  onGroupChange(e) {
+    console.log('onChange checkbox', e);
+    this.setData({
+      filterTag: e.detail.value
+    })   
   },
 });

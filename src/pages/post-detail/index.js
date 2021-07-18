@@ -22,7 +22,7 @@ Page({
       url: 'https://tiki-be.herokuapp.com/api/post/' + options,
       method: 'GET',
       success: (response) => {
-        console.log(response, 'list from success');
+        console.log(response, 'detail post');
         this.setData({
           post: response.data
         })
