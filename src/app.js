@@ -5,6 +5,7 @@ App({
       success: (res) => { 
         console.log(res)
         if(res) {
+          my.showLoading({ content: 'Loading...', delay: 1000 });
           my.getAuthCode({
             scopes: ["offline", "user_profile"],
             success: (res) => {
@@ -18,6 +19,7 @@ App({
                     data: response.data,
                     success: function () {
                       console.log('done');
+                      my.hideLoading();
                     }
                   });
                   console.log(response, 'jjj');

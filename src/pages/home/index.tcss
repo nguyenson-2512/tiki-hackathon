@@ -35,3 +35,25 @@ view {
   margin-left: 1px;
   margin-right: 20px;
 }
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.text {
+  margin-left: 12px;
+}
+
+.component-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
