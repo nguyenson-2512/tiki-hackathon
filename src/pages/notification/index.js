@@ -12,7 +12,7 @@ Page({
             postId: "60f13d6c6c74df30e41dfc74",
             content: "liked your post",
             targetUser: "12936235",
-            createdAt: "2021-07-17T07:29:40.473Z",
+            createdAt: "11 months ago",
         }
     ]
   },
@@ -38,4 +38,8 @@ Page({
       //   }
       // });
   },
+
+  navToPostDetail() {
+     my.navigateTo({ url: "pages/post-detail/index?" + "60f13d6c6c74df30e41dfc74"});
+  }
 });

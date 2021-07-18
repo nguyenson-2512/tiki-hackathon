@@ -1,18 +1,29 @@
-<block tiki:for="{{notificationList}}">
-  <!--todo: click item navigate detail post -->
-  <view class="flex flex-row">
-    <view>
-      <image src="{{item.influencer.avatar}} " class="avatar mr-medium" />
-    </view>
-    <view class="flex flex-col">
-      <view>
-        <text class="font-bold mr-medium">{{item.influencer.name}} </text>
-        <text class="time-value">{{item.createdAt}}</text>
-      </view>
-      <view class="flex flex-row">
-        <text class="mr-small ">{{item.influencer.name}} {{item.content}}</text>
-      </view>
-    </view>
+<view style="margin: 10px;">
+  <view style="margin-bottom: 5px;">
+    <text style="font-size: 24px; color:black; font-weight: bold; ">Notifications</text>
   </view>
-</block>
-
+  <block tiki:for="{{notificationList}}">
+    <!--todo: click item navigate detail post -->
+   <view style="margin-bottom: 8px;" onTap="navToPostDetail">
+      <view class="flex flex-row">
+        <view class="flex flex-row" style="width: 280px;">
+          <view>
+            <image src="{{item.influencer.avatar}} " class="avatar mr-medium" />
+          </view>
+          <view class="flex flex-col">
+            <view>
+              <text class="font-bold mr-medium">{{item.influencer.name}} </text>
+              <text class="time-value">{{item.createdAt}}</text>
+            </view>
+            <view class="flex flex-row">
+              <text class="mr-small ">{{item.influencer.name}} {{item.content}}</text>
+            </view>
+          </view>
+        </view>
+        <view tiki:if="{{!item.isRead}}">
+          <image src="https://media1.nguoiduatin.vn/thumb_x600x600/media/duong-thi-thu-nga/2018/04/09/mau-xanh-duong.jpg" style="width: 10px; height: 10px; border-radius: 30px;"></image>
+        </view>
+      </view>
+   </view>
+  </block>
+</view>
