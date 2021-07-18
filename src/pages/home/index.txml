@@ -97,7 +97,7 @@
                   </view>
                   <view class="component-item">
                     <checkbox value="check2"  />
-                    <text>Phụ kiện</text>
+                    <text>Laptop</text>
                   </view>
                 </view>
               </view>

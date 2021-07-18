@@ -49,8 +49,11 @@ Page({
     console.log(commentContent);
     console.log(userName);
     my.request({
-      url: 'https://tiki-be.herokuapp.com/api/' + id + '/create',
+      url: 'https://tiki-be.herokuapp.com/api/' + id + '/comment/create',
       method: 'POST',
+      headers: {
+        "content-type": "application/json",
+      },
       data: {
           author: {
           id: '1x',
@@ -60,8 +63,9 @@ Page({
           authCode: '123',
           content: commentContent,
         },
+      dataType: "json",
       success: (response) => {
-        console.log(response);
+        console.log(response, "okkk");
       },
       fail: (re) => {
         console.log('err of creating cmt')
