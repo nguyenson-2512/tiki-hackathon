@@ -1,4 +1,3 @@
-
 var moment = require('moment');
 var id = "";
 var commentContent = "";
@@ -8,7 +7,6 @@ var userName = "";
 Page({
   data: {
     post: null,
-    cmts: [6, 12, 15],
   },
 
   onLoad(options) {
@@ -42,6 +40,40 @@ Page({
 
   writing(event) {
     commentContent = event.detail.value;
+  },
+
+  onClickLikeComment(event) {
+    const commentId = event.target.dataset.id;
+    const commentIndex = event.target.dataset.index;
+    
+    const post = this.data.post;
+      my.getStorage({
+        key: 'user',
+        success: function (res) {
+          if(res) {
+            console.log('user', res)
+            my.request({
+              url: 'https://tiki-be.herokuapp.com/api/' + commentId + '/like',
+              method: 'PUT',
+              headers: {
+                "content-type": "application/json",
+              },
+              data: {
+                authorId: res.data.customer.id,
+                isPost: false
+              },
+              dataType: "json",
+              success: (response) => {
+                console.log(response, 'liked');
+                console.log(post.comments[commentIndex].like.length + 1)
+              },
+            });
+          }
+        },
+        fail: function (res) {
+          my.alert({ content: res.errorMessage });
+        }
+      });
   },
 
   postComment() {
