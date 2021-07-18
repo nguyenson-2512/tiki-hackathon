@@ -49,7 +49,7 @@
     </view>
   </view>
   <view>
-    <input class="text-box" confirm-type="Done" placeholder="Viết bình luận..."></input>
+    <input class="text-box" confirm-type="Done" placeholder="Viết bình luận..." onConfirm="postComment" onInput="writing"></input>
     <block tiki:for="{{cmts}}">
     <view class="item1" style="margin-top: 15px;">
       <view class= "flex flex-col">

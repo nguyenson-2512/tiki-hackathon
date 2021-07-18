@@ -43,7 +43,7 @@ Component({
           if(res) {
             console.log('user', res)
             my.request({
-              url: `https://tiki-be.herokuapp.com/api/${post._id}/like`,
+              url: 'https://tiki-be.herokuapp.com/api/' + post._id + '/like',
               method: 'PUT',
               headers: {
                 "content-type": "application/json",
@@ -73,6 +73,31 @@ Component({
       const id = event.target.dataset.item;
       console.log(event);
       my.navigateTo({ url: "pages/post-detail/index?" + id});
-    }  
+    },
+
+    testCmt() {
+      my.request({
+      url: 'https://tiki-be.herokuapp.com/api/60f13d6c6c74df30e41dfc74/comment/create',
+      method: 'POST',
+      data: {
+          author: {
+          id: '1x',
+          avatar: '',
+          name: 'User 1'
+          },
+          authCode: '123',
+          content: 'test comment',
+        },
+      success: (response) => {
+        console.log(response);
+      },
+      fail: (re) => {
+        console.log('haha')
+      },
+      complete: (re) => {
+        
+      }
+    });
+    }
   }
 });
