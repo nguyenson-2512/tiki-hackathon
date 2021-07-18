@@ -13,11 +13,10 @@ Component({
     cmts: [6, 12, 15],
     show: false,
     numberOfLike: 0,
-    post: [],
+    post: null,
     time: '',
     more: false,
     description: "NGHIÊNG s",
-    post: []
   },
   didMount() {
     this.setData({post: this.props.post})
