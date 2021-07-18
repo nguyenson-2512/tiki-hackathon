@@ -13,11 +13,10 @@ Component({
     cmts: [6, 12, 15],
     show: false,
     numberOfLike: 0,
-    post: [],
+    post: null,
     time: '',
     more: false,
     description: "NGHIÊNG s",
-    post: []
   },
   didMount() {
     this.setData({post: this.props.post})
@@ -36,7 +35,40 @@ Component({
       numberOfLike: this.props.post.like.length,
       time: moment(this.props.post.createdAt).fromNow()})
     },  
-
+    handleLikePost() {
+      const post = this.data.post;
+      my.getStorage({
+        key: 'user',
+        success: function (res) {
+          if(res) {
+            console.log('user', res)
+            my.request({
+              url: `https://tiki-be.herokuapp.com/api/${post._id}/like`,
+              method: 'PUT',
+              headers: {
+                "content-type": "application/json",
+              },
+              data: {
+                authorId: res.data.customer.id,
+                isPost: true
+              },
+              dataType: "json",
+              success: (response) => {
+                console.log(response, 'liked');
+                console.log(post.like.length + 1)
+                const numsOfLike = post.like.length + 1
+                this.setData({
+                  numberOfLike: post.like.length + 1
+                })
+              },
+            });
+          }
+        },
+        fail: function (res) {
+          my.alert({ content: res.errorMessage });
+        }
+      });
+    },
     navToDetail(event) {
       const id = event.target.dataset.item;
       console.log(event);
