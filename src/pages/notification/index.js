@@ -44,8 +44,8 @@ Page({
               }
             })  
         }
-                        
-
-    // my.navigateTo({ url: `pages/post-detail/index?${event.target.targetDataset.view-name.postId}`});
+    const postId = event.target.dataset['view-name'].postId;                  
+    console.log(event);
+    my.navigateTo({ url: `pages/post-detail/index?` + postId});
   }
 });
