@@ -1,4 +1,3 @@
-var {filter} = require('lodash');
 
 Page({
   data: {
@@ -94,9 +93,9 @@ Page({
       return false;
     }
     const formattedQuery = event.detail.value.toLowerCase();
-    const filteredData = filter(this.data.fullTopList, (post) => {
+    const filteredData = this.data.fullTopList.filter(post => {
       return contains(post, formattedQuery);
-    });
+    })
     this.setData({
       topList: filteredData
     })

@@ -1,9 +1,10 @@
 <scroll-view>
-  <label>
+  <!-- <label>
     <text class="item">
       Tạo bài viết mới
     </text>
   </label>
+  <form onSubmit="onSubmit">
   <input class="text-box" forcus="true" confirm-type="Next" placeholder="Tiêu đề"></input>
 
   <input class="text-box" confirm-type="Next" placeholder="Tag" />
@@ -18,6 +19,47 @@
     auto-height="true" />
 
   <view style="width: 100%;" class="flex justify-center">
-    <button class="button" onTap="onSubmit">Đăng</button>
+    <button class="button">Đăng</button>
   </view>
+  </form> -->
+
+  <form onSubmit="onSubmit">
+    <view class="block">
+      <label>
+        <text class="header">Tiêu đề</text>
+        <input name="title" placeholder="Tiêu đề" />
+      </label>
+    </view>
+    <view class="block">
+      <label>
+        <text class="header">Nội dung</text>
+        <input name="description" placeholder="Nội dung" />
+      </label>
+    </view>
+
+    <view class="block">
+      <text class="header">Tag</text>
+      <radio-group name="tag">
+        <label class="flex">
+          <radio value="phone" checked />
+          <text>Điện thoại</text>
+        </label>
+        <label class="flex">
+          <radio value="accessory" />
+          <text>Phụ kiện</text>
+        </label>
+        <label class="flex">
+          <radio value="laptop" checked />
+          <text>Máy tính</text>
+        </label>
+        <label class="flex">
+          <radio value="other" />
+          <text>Khác</text>
+        </label>
+      </radio-group>
+    </view>
+    <view class="buttons">
+      <button form-type="submit">Đăng</button>
+    </view>
+  </form>
 </scroll-view>

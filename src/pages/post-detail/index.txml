@@ -59,7 +59,7 @@
           <view class="flex flex-col" style="width: 215px;">
             <view class="flex flex-row">
               <text class="title"  style="width: 130px;">{{item.author.name}}</text>
-              <text class="text-time" >. {{ item.createdAt }}</text>
+              <text class="text-time" > {{ item.createdAt }}</text>
             </view>
             <view class="flex flex-row">
               <text class="user-name">{{item.content}}</text>

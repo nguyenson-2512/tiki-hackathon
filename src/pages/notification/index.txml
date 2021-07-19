@@ -4,20 +4,20 @@
   </view>
   <block tiki:for="{{notificationList}}">
     <!--todo: click item navigate detail post -->
-   <view style="margin-bottom: 8px;" onTap="navToPostDetail">
+   <view style="margin-bottom: 8px;" data-view-name="{{item}}" onTap="navToPostDetail">
       <view class="flex flex-row">
-        <view class="flex flex-row" style="width: 280px;">
+        <view class="flex flex-row" style="width: 350px;">
           <view>
-            <image src="{{item.influencer.avatar}} " class="avatar mr-medium" />
+            <image src="https://icon-library.com/images/icon-user/icon-user-15.jpg" class="avatar mr-medium" />
           </view>
           <view class="flex flex-col">
             <view>
               <text class="font-bold mr-medium">{{item.influencer.name}} </text>
-              <text class="time-value">{{item.createdAt}}</text>
             </view>
             <view class="flex flex-row">
               <text class="mr-small ">{{item.influencer.name}} {{item.content}}</text>
             </view>
+            <text class="time-value">{{item.createdAt}}</text>
           </view>
         </view>
         <view tiki:if="{{!item.isRead}}">
