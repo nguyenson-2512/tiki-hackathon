@@ -1,4 +1,4 @@
-var moment = require('moment');
+// var moment = require('moment');
 var id = "";
 var commentContent = "";
 var userName = "";
@@ -30,9 +30,21 @@ Page({
         console.log('haha')
       },
       complete: (re) => {
+        function formatDate(date) {
+          return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() 
+        }
+        let date = new Date(this.data.post.createdAt)
         this.setData({
-          post: {...this.data.post, createdAt: moment(this.data.post.createdAt).fromNow()}
+          post: {...this.data.post, createdAt: formatDate(date) }
         })
+        let formatCommentDate= []
+        for(let item of this.data.post.comment) {
+          console.log(item);
+        }
+        this.setData({
+          post: {...this.data.post, comments: formatDate(date) }
+        })
+        comments
       }
     });
   },
