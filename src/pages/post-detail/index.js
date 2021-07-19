@@ -3,7 +3,6 @@ var id = "";
 var commentContent = "";
 var userName = "";
 
-
 Page({
   data: {
     post: null,
