@@ -45,10 +45,16 @@ Component({
       const post = this.data.post;
       my.getStorage({
         key: 'user',
-        success: function (res) {
+        success: async function (res) {
           if(res) {
             console.log('user', res)
-            my.request({
+          }
+        },
+        fail: function (res) {
+          my.alert({ content: res.errorMessage });
+        },
+        complete: () => {
+          my.request({
               url: 'https://tiki-be.herokuapp.com/api/' + post._id + '/like',
               method: 'PUT',
               headers: {
@@ -66,17 +72,11 @@ Component({
               success: (response) => {
                 console.log(response, 'liked');
                 console.log(post.like.length + 1)
-                const numsOfLike = post.like.length + 1
                 this.setData({
                   numberOfLike: post.like.length + 1
                 })
-                console.log( numberOfLike, "sau" );
               },
             });
-          }
-        },
-        fail: function (res) {
-          my.alert({ content: res.errorMessage });
         }
       });
     },
