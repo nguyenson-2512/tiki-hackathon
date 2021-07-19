@@ -42,7 +42,7 @@
   <view class="flex flex-row" style="margin-top: 15px;">
     <view class="mr-medium flex justify-center items-center">
       <image src="../../images/like.png" style="width: 25px; height: 25px; margin-right: 3px;" onTap="handleLikePost"></image>
-      <text>{{post.like.length}}</text>
+      <text>{{numberOfLike}}</text>
     </view>
   </view>
 </view>

@@ -68,7 +68,7 @@
           <view style="display: flex; align-self: center;" class="flex flex-row">
             <view class="flex flex-col" onTap="onClickLikeComment" data-id="{{item._id}}" data-index="{{index}}">
               <image src="../../images/smile.png" class="avatar" style="width: 25px; height: 25px;"></image>
-              <text style="display: flex;align-self: center;">{{item.like.length}}</text>
+              <text style="display: flex;align-self: center;">{{commentLike}}</text>
             </view>
           </view>
         </view>

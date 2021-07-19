@@ -6,6 +6,7 @@ var userName = "";
 Page({
   data: {
     post: null,
+    commentLike: null,
   },
 
   onLoad(options) {
@@ -47,6 +48,8 @@ Page({
         comments
       }
     });
+    
+    
   },
 
   writing(event) {
@@ -60,10 +63,16 @@ Page({
     const post = this.data.post;
       my.getStorage({
         key: 'user',
-        success: function (res) {
+        success: async function (res) {
           if(res) {
             console.log('user', res)
-            my.request({
+          }
+        },
+        fail: function (res) {
+          my.alert({ content: res.errorMessage });
+        },
+        complete: () => {
+          my.request({
               url: 'https://tiki-be.herokuapp.com/api/' + commentId + '/like',
               method: 'PUT',
               headers: {
@@ -80,13 +89,10 @@ Page({
               dataType: "json",
               success: (response) => {
                 console.log(response, 'liked');
-                console.log(post.comments[commentIndex].like.length + 1)
+                console.log(post.comments[commentIndex].like.length + 1);
+                this.setData({ commentLike: post.comments[commentIndex].like.length + 1, first: false, second: true})
               },
-            });
-          }
-        },
-        fail: function (res) {
-          my.alert({ content: res.errorMessage });
+          });
         }
       });
   },
