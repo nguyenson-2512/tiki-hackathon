@@ -59,7 +59,11 @@ Page({
                 "content-type": "application/json",
               },
               data: {
-                authorId: res.data.customer.id,
+                author: {
+                  id: '1x',
+                  avatar: '',
+                  name: userName,
+                },
                 isPost: false
               },
               dataType: "json",

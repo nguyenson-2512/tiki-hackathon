@@ -38,8 +38,19 @@ Page({
       //   }
       // });
   },
-
-  navToPostDetail() {
-     my.navigateTo({ url: "pages/post-detail/index?" + "60f13d6c6c74df30e41dfc74"});
+  navToPostDetail(event) {
+    const id = event.target.dataset['view-name']._id;
+        if(event.target.dataset['view-name'].isRead == false) {
+            my.request({
+              url: `https://tiki-be.herokuapp.com/api/${id}/read-notification`,
+              method: 'PUT',
+              success: (response) => {
+                console.log(response)
+              }
+            })  
+        }
+    const postId = event.target.dataset['view-name'].postId;                  
+    console.log(event);
+    my.navigateTo({ url: `pages/post-detail/index?` + postId});
   }
 });

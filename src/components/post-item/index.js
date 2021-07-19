@@ -1,6 +1,6 @@
 var rs = "";
 var moment = require('moment');
-
+var userName = "";
 function truncate( str, n ){
   if (str.toString().length <= n) { return str.toString(); }
   const subString = str.toString().substr(0, n-1);
@@ -30,6 +30,12 @@ Component({
     } else {
       this.setData({ description: this.props.post.description })
     }
+
+    my.getUserInfo({
+      success: (res) => { userName = res.name },
+      fail: (res) => { console.log(res.message); }
+    });
+
     this.setData({
       post: this.props.post, 
       numberOfLike: this.props.post.like.length,
@@ -49,7 +55,11 @@ Component({
                 "content-type": "application/json",
               },
               data: {
-                authorId: res.data.customer.id,
+              author: {
+                id: '1x',
+                avatar: '',
+                name: userName,
+              },
                 isPost: true
               },
               dataType: "json",
@@ -60,6 +70,7 @@ Component({
                 this.setData({
                   numberOfLike: post.like.length + 1
                 })
+                console.log( numberOfLike, "sau" );
               },
             });
           }
