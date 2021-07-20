@@ -40,12 +40,10 @@ Page({
               url: `https://tiki-be.herokuapp.com/api/${id}/read-notification`,
               method: 'PUT',
               success: (response) => {
-                console.log(response)
               }
             })  
         }
     const postId = event.target.dataset['view-name'].postId;                  
-    console.log(event);
     my.navigateTo({ url: `pages/post-detail/index?` + postId});
   }
 });

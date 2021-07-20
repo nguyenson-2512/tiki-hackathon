@@ -1,7 +1,5 @@
 Page({
   data: {
-    content: ' Hien tai e dang phan van khong biet nen mua iphone X hay iphone Xs max,moi nguoi cho e xin it loi khuyen voi',
-
     times: [6, 12, 15],
     show: false,
     position: 'top',
@@ -13,23 +11,8 @@ Page({
     na: "User Name"
   },
   onLoad() {
-    // my.getUserInfo({
-    //   success: (res) => {this.setData({ avt: res.avatar, na: res.name })},
-    //   fail: (res) => {}
-    // });
-
-    //  my.getStorage({
-    //   key: 'user',
-    //   success: function (res) {
-    //     my.alert({ content: 'Title' + res.data.title });
-    //   },
-    //   fail: function (res) {
-    //     my.alert({ content: res.errorMessage });
-    //   }
-    // });
   },
   onShow() {
-    console.log('hshhshsh')
   },
   onOk() {
     this.setData({ show: false });

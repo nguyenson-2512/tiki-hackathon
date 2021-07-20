@@ -22,13 +22,11 @@ Page({
       url: 'https://tiki-be.herokuapp.com/api/post/' + options,
       method: 'GET',
       success: (response) => {
-        console.log(response, 'detail post');
         this.setData({
           post: response.data
         })
       },
       fail: (re) => {
-        console.log('haha')
       },
       complete: (re) => {
         function formatDate(date) {
@@ -40,12 +38,10 @@ Page({
         })
         let formatCommentDate= []
         for(let item of this.data.post.comment) {
-          console.log(item);
         }
         this.setData({
           post: {...this.data.post, comments: formatDate(date) }
         })
-        comments
       }
     });
     
@@ -65,7 +61,6 @@ Page({
         key: 'user',
         success: async function (res) {
           if(res) {
-            console.log('user', res)
           }
         },
         fail: function (res) {
@@ -88,8 +83,6 @@ Page({
               },
               dataType: "json",
               success: (response) => {
-                console.log(response, 'liked');
-                console.log(post.comments[commentIndex].like.length + 1);
                 this.setData({ commentLike: post.comments[commentIndex].like.length + 1, first: false, second: true})
               },
           });
@@ -98,9 +91,6 @@ Page({
   },
 
   postComment() {
-    console.log( "id:", id);
-    console.log(commentContent);
-    console.log(userName);
     my.request({
       url: 'https://tiki-be.herokuapp.com/api/' + id + '/comment/create',
       method: 'POST',
@@ -118,13 +108,10 @@ Page({
         },
       dataType: "json",
       success: (response) => {
-        console.log(response, "okkk");
       },
       fail: (re) => {
-        console.log('err of creating cmt')
       },
       complete: (re) => {
-        
       }
     });
   },

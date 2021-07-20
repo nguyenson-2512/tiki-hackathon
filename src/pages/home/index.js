@@ -21,14 +21,12 @@ Page({
       url: 'https://tiki-be.herokuapp.com/api/get-top-posts',
       method: 'GET',
       success: (response) => {
-        console.log(response, 'list');
         this.setData({
           topList: response.data,
           fullTopList: response.data
         })
       },
       fail: (re) => {
-        console.log('haha')
       }
     });
   },
@@ -36,25 +34,29 @@ Page({
     this.setData({
       [tabsName]: index,
     });
+    let userId = ''
     if(index == 0 && !this.data.myList) {
       my.getStorage({
         key: 'user',
         success: function (res) {
           if(res) {
-            my.request({
-              url: `https://tiki-be.herokuapp.com/api/get-my-posts/${res.data.customer.id}`,
-              method: 'GET',
-              success: (response) => {
-                console.log(response, 'my list');
-                this.setData({
-                  myList: response.data
-                })
-              }
-            });
+            userId = res.data.customer.id
           }
         },
         fail: function (res) {
           my.alert({ content: res.errorMessage });
+        },
+        complete: () => {
+            my.request({
+              url: `https://tiki-be.herokuapp.com/api/get-my-posts/${userId}`,
+              method: 'GET',
+              success: (response) => {
+                this.setData({
+                  myList: response.data
+                })
+              },
+              fail: r => console.log(r)
+            });
         }
       });
     }
@@ -101,13 +103,11 @@ Page({
     })
   },
   onChange(e) {
-    console.log('onChange', e);
     this.setData({
       filterLike: e.detail.value
     })
   },
   onGroupChange(e) {
-    console.log('onChange checkbox', e);
     this.setData({
       filterTag: e.detail.value
     })   
